@@ -9,4 +9,13 @@ class PagesController < ApplicationController
     @kudos = Kudo.create(page: @page)
     render json: {page: @page.to_json}
   end
+
+  def count
+    @page = Page.where(url: params[:url], app_id: params[:app_id]).first
+    if @page
+      render json: {url: @page.url, count: @page.num_kudos}
+    else
+      render json: {}
+    end
+  end
 end

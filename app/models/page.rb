@@ -9,12 +9,12 @@ class Page < ActiveRecord::Base
   def to_json
     return {
       url: url,
-      kudos: Kudo.to_json(kudos)
+      kudos: num_kudos
     }
   end
 
   def num_kudos
-    kudos.length
+    kudos.count
   end
 
 end
