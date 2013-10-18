@@ -1,5 +1,4 @@
 class Page < ActiveRecord::Base
-  has_many :kudos
   belongs_to :app
 
   def self.to_json(pages)
@@ -14,7 +13,7 @@ class Page < ActiveRecord::Base
   end
 
   def num_kudos
-    kudos.count
+    kudos
   end
 
 end

@@ -6,7 +6,8 @@ class PagesController < ApplicationController
 
   def find_or_create
     @page = Page.find_or_create_by(url: params[:url], app_id: params[:app_id])
-    @kudos = Kudo.create(page: @page)
+    @page.kudos += 1
+    @page.save
     render json: {page: @page.to_json}
   end
 

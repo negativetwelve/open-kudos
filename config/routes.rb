@@ -1,7 +1,6 @@
 OpenKudos::Application.routes.draw do
   resources :apps do
     resources :pages do
-      resources :kudos
     end
     match '/new', to: 'pages#find_or_create', via: :get
     match '/count', to: 'pages#count', via: :get

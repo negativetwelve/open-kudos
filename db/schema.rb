@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20131018095123) do
   create_table "pages", force: true do |t|
     t.text     "url"
     t.integer  "app_id"
+    t.integer  "kudos",      default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

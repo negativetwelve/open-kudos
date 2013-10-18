@@ -3,6 +3,7 @@ class CreatePages < ActiveRecord::Migration
     create_table :pages do |t|
       t.text :url
       t.belongs_to :app
+      t.integer :kudos, default: 0
 
       t.timestamps
     end
