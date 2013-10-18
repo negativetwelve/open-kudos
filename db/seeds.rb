@@ -5,3 +5,6 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+a = App.find_or_create_by(name: "markmiyashita.com")
+p = Page.find_or_create_by(app: a, url: "/")
